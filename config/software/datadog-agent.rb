@@ -83,6 +83,10 @@ build do
     # so that the prerm script knows which compiled files to remove
     command "echo '# DO NOT REMOVE/MODIFY - used by package removal tasks' > #{install_dir}/embedded/.py_compiled_files.txt"
     command "find #{install_dir}/embedded '(' -name '*.pyc' -o -name '*.pyo' ')' -type f -delete -print >> #{install_dir}/embedded/.py_compiled_files.txt"
+
+    # Remove JDK + Maven
+    command "rm -rf #{install_dir}/embedded/jdk"
+    command "rm -rf #{install_dir}/embedded/maven"
   end
 
   if osx?
