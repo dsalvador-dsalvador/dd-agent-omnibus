@@ -30,6 +30,7 @@ end
 # Agent dependencies
 dependency 'boto'
 dependency 'docker-py'
+dependency 'jmxfetch'
 dependency 'ntplib'
 dependency 'protobuf-py'
 dependency 'psutil'
